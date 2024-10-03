@@ -21,6 +21,31 @@ The contract provides several key functions:
 3. **addPerson(string _name, uint256 _favNumber)**: Adds a new person with their name and favorite number to a list and updates the mapping.
 4. **nameToFavNumber**: A public mapping that returns a person's favorite number when queried by their name.
 
+## How to Use
+
+### 1. Deploying:
+
+	•	Open the contract in Remix IDE.
+	•	Compile the contract using Solidity version 0.8.19 or later.
+	•	Deploy the contract to a local blockchain or any Ethereum test network like Ropsten or Rinkeby.
+
+### 2. Interacting:
+
+	•	Use the store() function to store an unsigned integer.
+	•	Use the retrieve() function to fetch the stored number.
+	•	Use addPerson() to add a person’s name and favorite number to the list.
+	•	Query the nameToFavNumber mapping to retrieve a person’s favorite number using their name.
+
+### Prerequisites
+
+	•	Solidity 0.8.19 or later.
+	•	Remix IDE for compiling and deploying the contract.
+	•	Optional: MetaMask or another wallet for interacting with the contract on live networks.
+
+### License
+
+This project is licensed under the MIT License. You are free to use, modify, and distribute the code.
+
 ## Smart Contract Code
 
 ```solidity
@@ -55,28 +80,3 @@ contract Storage {
         nameToFavNumber[_name] = _favNumber;
     }
 }```
-
-## How to Use
-
-### 1. Deploying:
-
-	•	Open the contract in Remix IDE.
-	•	Compile the contract using Solidity version 0.8.19 or later.
-	•	Deploy the contract to a local blockchain or any Ethereum test network like Ropsten or Rinkeby.
-
-### 2. Interacting:
-
-	•	Use the store() function to store an unsigned integer.
-	•	Use the retrieve() function to fetch the stored number.
-	•	Use addPerson() to add a person’s name and favorite number to the list.
-	•	Query the nameToFavNumber mapping to retrieve a person’s favorite number using their name.
-
-### Prerequisites
-
-	•	Solidity 0.8.19 or later.
-	•	Remix IDE for compiling and deploying the contract.
-	•	Optional: MetaMask or another wallet for interacting with the contract on live networks.
-
-### License
-
-This project is licensed under the MIT License. You are free to use, modify, and distribute the code.
