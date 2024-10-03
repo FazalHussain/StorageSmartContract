@@ -79,4 +79,4 @@ contract Storage {
         people.push(People(_favNumber, _name));
         nameToFavNumber[_name] = _favNumber;
     }
-}```
+}
