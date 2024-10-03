@@ -1,28 +1,24 @@
-REMIX DEFAULT WORKSPACE
+Enhanced Storage Smart Contract
 
-Remix default workspace is present when:
-i. Remix loads for the very first time 
-ii. A new workspace is created with 'Default' template
-iii. There are no files existing in the File Explorer
+This repository contains an enhanced version of a basic Storage Smart Contract written in Solidity. It demonstrates additional functionality such as storing a list of people, each with a favorite number and a corresponding mapping between names and favorite numbers. The contract allows users to store and retrieve values on the Ethereum blockchain, as well as to maintain and query a list of people.
 
-This workspace contains 3 directories:
+Features
 
-1. 'contracts': Holds three contracts with increasing levels of complexity.
-2. 'scripts': Contains four typescript files to deploy a contract. It is explained below.
-3. 'tests': Contains one Solidity test file for 'Ballot' contract & one JS test file for 'Storage' contract.
+	•	Store a Number: Allows users to store a uint256 number in the contract’s storage.
+	•	Retrieve the Stored Number: Provides a function to retrieve the most recently stored number.
+	•	Add People: Users can add a person to the contract’s list of people, each identified by a name and their favorite number.
+	•	Mapping: A mapping between a person’s name (as a string) and their favorite number (as a uint256) is maintained, allowing for quick lookups.
 
-SCRIPTS
+Technology Stack
 
-The 'scripts' folder has four typescript files which help to deploy the 'Storage' contract using 'web3.js' and 'ethers.js' libraries.
+	•	Solidity: The contract is written in Solidity, a high-level language for implementing smart contracts on Ethereum.
+	•	Remix IDE: This contract can be deployed and tested using Remix IDE, an online Ethereum IDE for writing smart contracts.
 
-For the deployment of any other contract, just update the contract's name from 'Storage' to the desired contract and provide constructor arguments accordingly 
-in the file `deploy_with_ethers.ts` or  `deploy_with_web3.ts`
+Contract Overview
 
-In the 'tests' folder there is a script containing Mocha-Chai unit tests for 'Storage' contract.
+The contract provides several key functions:
 
-To run a script, right click on file name in the file explorer and click 'Run'. Remember, Solidity file must already be compiled.
-Output from script will appear in remix terminal.
-
-Please note, require/import is supported in a limited manner for Remix supported modules.
-For now, modules supported by Remix are ethers, web3, swarmgw, chai, multihashes, remix and hardhat only for hardhat.ethers object/plugin.
-For unsupported modules, an error like this will be thrown: '<module_name> module require is not supported by Remix IDE' will be shown.
+	1.	store(uint256 _number): Stores an unsigned integer in the contract’s storage.
+	2.	retrieve(): Returns the last stored unsigned integer.
+	3.	addPerson(string _name, uint256 _favNumber): Adds a new person with their name and favorite number to a list and updates the mapping.
+	4.	nameToFavNumber: A public mapping that returns a person’s favorite number when queried by their name.
